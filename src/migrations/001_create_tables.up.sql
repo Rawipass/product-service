@@ -1,4 +1,3 @@
--- สร้างตาราง users
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     username VARCHAR(255) NOT NULL,
@@ -6,7 +5,6 @@ CREATE TABLE users (
     created_at TIMESTAMP NOT NULL DEFAULT NOW()
 );
 
--- สร้างตาราง products
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,
     gender VARCHAR(50) NOT NULL, 
@@ -16,7 +14,6 @@ CREATE TABLE products (
     created_at TIMESTAMP NOT NULL DEFAULT NOW()
 );
 
--- สร้างตาราง orders
 CREATE TABLE orders (
     id SERIAL PRIMARY KEY,
     user_id INTEGER NOT NULL, 
@@ -26,7 +23,7 @@ CREATE TABLE orders (
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
--- สร้างตาราง order_items
+
 CREATE TABLE order_items (
     id SERIAL PRIMARY KEY,
     order_id INTEGER NOT NULL, 
